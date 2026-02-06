@@ -1,4 +1,5 @@
 import Image from "next/image"
+import ProductList from "@/components/ProductList";
 
 const Homepage = () => {
   return (
@@ -10,6 +11,7 @@ const Homepage = () => {
         fill
         />
       </div>
+      <ProductList/>
     </div>
   )
 }
