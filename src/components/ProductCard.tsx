@@ -24,7 +24,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
   }) => {
     setProductTypes((prev) => ({
       ...prev, //...prev -> Copies all existing properties (e.g. both size and color) from the previous state.
-      [type]: value, //[type] is a computed property name, so it will be either "size" or "color"
+      [type]: value, //[type] is an array of property names, so it will be either "size" or "color"
     }));
   };
 
