@@ -1,7 +1,7 @@
 import Image from "next/image"
 import ProductList from "@/components/ProductList";
 
-const Homepage = async ({searchParams}:{searchParams: Promise<{category?:string}>}) => { //since its a server component, the params can be fetched without using useSearchParams hook
+const Homepage = async ({searchParams}:{searchParams: Promise<{category:string}>}) => { //since its a server component, the params can be fetched without using useSearchParams hook
 
   const category = (await searchParams).category;
   return (
@@ -13,7 +13,7 @@ const Homepage = async ({searchParams}:{searchParams: Promise<{category?:string}
         fill
         />
       </div>
-      <ProductList category={category}/>
+      <ProductList category={category} params='homepage'/>
     </div>
   )
 }
