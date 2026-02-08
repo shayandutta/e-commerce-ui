@@ -23,8 +23,8 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     value: string;
   }) => {
     setProductTypes((prev) => ({
-      ...prev,
-      [type]: value,
+      ...prev, //...prev -> Copies all existing properties (e.g. both size and color) from the previous state.
+      [type]: value, //[type] is a computed property name, so it will be either "size" or "color"
     }));
   };
 
@@ -56,8 +56,8 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               name="size"
               id="size"
               className="ring ring-gray-300 rounded-md px-2 py-1"
-              onChange={(e) =>
-                handleProductTypeChange({ type: "size", value: e.target.value })
+              onChange={(e) => //e -> event object, e.target -> the element that triggered the event (in this case the <select> element)
+                handleProductTypeChange({ type: "size", value: e.target.value }) //e.target.value -> the value of the selected option
               }
             >
               {product.sizes.map((size) => (
